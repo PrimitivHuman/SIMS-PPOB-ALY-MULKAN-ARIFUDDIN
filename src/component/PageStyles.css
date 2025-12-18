@@ -1,0 +1,1216 @@
+/* ========================================
+   GLOBAL RESETS & BASE STYLES
+   ======================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+        'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+        sans-serif;
+    background-color: #ffffff;
+    min-height: 100vh;
+}
+
+/* ========================================
+   AUTHENTICATION LAYOUT (Login & Registration)
+   ======================================== */
+.login-container,
+.registration-container {
+    display: flex;
+    height: 100vh;
+    width: 100%;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.left-panel {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+    background-color: white;
+}
+
+.right-panel {
+    flex: 1;
+    background-color: #fff1f0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.illustration-img {
+    max-width: 80%;
+    height: auto;
+    object-fit: contain;
+}
+
+.form-wrapper {
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+}
+
+.logo-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 30px;
+}
+
+.logo-icon {
+    width: 24px;
+    height: 24px;
+}
+
+.app-title {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #333;
+}
+
+.page-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 40px;
+    line-height: 1.4;
+}
+
+/* ========================================
+   MAIN APP LAYOUT
+   ======================================== */
+.home-page,
+.pembayaran-page,
+.page-container {
+    width: 100%;
+    min-height: 100vh;
+    background-color: #ffffff;
+}
+
+.main-content {
+    padding: 40px 80px;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.section-title {
+    font-size: 20px;
+    font-weight: 600;
+    color: #000000;
+    margin-bottom: 30px;
+}
+
+/* ========================================
+   HEADER & NAVIGATION (FormHeader)
+   ======================================== */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 80px;
+    border-bottom: 1px solid #e0e0e0;
+    background-color: #ffffff;
+}
+
+.header-logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.header-logo img {
+    width: 30px;
+    height: 30px;
+}
+
+.brand-name {
+    font-size: 18px;
+    font-weight: 600;
+    color: #000000;
+}
+
+.header-nav {
+    display: flex;
+    gap: 40px;
+}
+
+.header-nav .menu-link,
+.header-nav .menu-link:visited,
+.header-nav .menu-link:active {
+    text-decoration: none;
+    color: #6b6b6b;
+    font-size: 14px;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.header-nav .menu-link:hover,
+.header-nav .menu-link.active {
+    color: #ef4444;
+}
+
+.header-nav .menu-link.active {
+    pointer-events: none;
+    cursor: default;
+}
+
+/* ========================================
+   COMMON UI COMPONENTS - BUTTONS
+   ======================================== */
+.primary-btn,
+.submit-btn,
+.payment-btn {
+    width: 100%;
+    padding: 14px;
+    background-color: #ef4444;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.submit-btn {
+    padding: 12px;
+    font-size: 1rem;
+    border-radius: 4px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    background-color: #f42619;
+}
+
+.primary-btn:hover:not(:disabled),
+.submit-btn:hover,
+.payment-btn:hover:not(:disabled) {
+    background-color: #dc2626;
+}
+
+.submit-btn:hover {
+    background-color: #d32f2f;
+}
+
+.primary-btn:disabled,
+.payment-btn:disabled {
+    background-color: #d1d5db;
+    cursor: not-allowed;
+}
+
+.outline-btn {
+    width: 100%;
+    padding: 14px;
+    background-color: transparent;
+    color: #ef4444;
+    border: 1px solid #ef4444;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.outline-btn:hover {
+    background-color: #fef2f2;
+}
+
+.text-btn {
+    width: 100%;
+    padding: 14px;
+    background-color: transparent;
+    color: #6b6b6b;
+    border: none;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.text-btn:hover {
+    color: #ef4444;
+}
+
+/* ========================================
+   COMMON UI COMPONENTS - FORM INPUTS
+   ======================================== */
+.input-group {
+    position: relative;
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.input-wrapper {
+    position: relative;
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.input-icon {
+    position: absolute;
+    left: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 16px;
+    color: #9ca3af;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.login-container .input-icon,
+.registration-container .input-icon {
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #aaa;
+    width: 16px;
+    height: 16px;
+    z-index: 1;
+}
+
+.input-icon img {
+    object-fit: contain;
+    max-width: 20px;
+    max-height: 20px;
+}
+
+.password-toggle {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #aaa;
+    cursor: pointer;
+    width: 16px;
+    height: 16px;
+    z-index: 1;
+}
+
+.form-input,
+.amount-input {
+    width: 100%;
+    padding: 14px 16px 14px 45px;
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+    font-size: 14px;
+    outline: none;
+    transition: all 0.3s;
+    background-color: #ffffff;
+}
+
+.login-container .form-input,
+.registration-container .form-input {
+    padding: 12px 40px 12px 40px;
+    border: 1px solid #e0e0e0;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    box-sizing: border-box;
+}
+
+.form-input:focus,
+.amount-input:focus {
+    border-color: #ef4444;
+}
+
+.login-container .form-input:focus,
+.registration-container .form-input:focus {
+    border-color: #f42619;
+}
+
+/* Hide native password reveal on Edge/IE */
+.form-input::-ms-reveal,
+.form-input::-ms-clear {
+    display: none;
+}
+
+.form-input:disabled {
+    cursor: not-allowed;
+    color: #6b6b6b;
+    opacity: 0.7;
+    pointer-events: none;
+}
+
+.amount-input::placeholder {
+    color: #9ca3af;
+}
+
+/* Validation Error Styles */
+.error-message {
+    display: block;
+    color: #f42619;
+    font-size: 0.75rem;
+    margin-top: 4px;
+    margin-bottom: 0;
+    text-align: left;
+    width: 100%;
+}
+
+.input-error {
+    border-color: #f42619 !important;
+}
+
+.input-error:focus {
+    border-color: #f42619 !important;
+    box-shadow: 0 0 0 2px rgba(244, 38, 25, 0.1);
+}
+
+/* ========================================
+   COMMON UI COMPONENTS - MODAL DIALOGS
+   ======================================== */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+.modal-content {
+    background: white;
+    border-radius: 12px;
+    padding: 40px 30px;
+    max-width: 400px;
+    width: 90%;
+    text-align: center;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+.modal-icon {
+    width: 70px;
+    height: 70px;
+    margin: 0 auto 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.icon-circle {
+    width: 50px;
+    height: 50px;
+    background-color: #ef4444;
+    border: 3px solid white;
+    border-radius: 50%;
+    box-shadow: 0 0 0 3px #ef4444;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.icon-circle img {
+    width: 28px;
+    height: 28px;
+    object-fit: contain;
+}
+
+.icon-circle-success {
+    width: 60px;
+    height: 60px;
+    background-color: #00c076;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.icon-circle-error {
+    width: 60px;
+    height: 60px;
+    background-color: #ef4444;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.checkmark-icon,
+.cross-icon {
+    font-size: 32px;
+    color: white;
+    font-weight: bold;
+}
+
+.modal-text {
+    font-size: 14px;
+    color: #6b6b6b;
+    margin-bottom: 10px;
+}
+
+.modal-amount {
+    font-size: 28px;
+    font-weight: 700;
+    color: #000000;
+    margin-bottom: 25px;
+}
+
+.modal-text-bottom {
+    font-size: 14px;
+    color: #6b6b6b;
+    margin-bottom: 25px;
+}
+
+.modal-confirm-btn {
+    width: 100%;
+    padding: 14px;
+    background-color: #ef4444;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    margin-bottom: 12px;
+    transition: background-color 0.3s;
+}
+
+.modal-confirm-btn:hover {
+    background-color: #dc2626;
+}
+
+.modal-cancel-btn {
+    width: 100%;
+    padding: 14px;
+    background-color: transparent;
+    color: #6b6b6b;
+    border: none;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.modal-cancel-btn:hover {
+    color: #ef4444;
+}
+
+.modal-link-btn {
+    background: none;
+    border: none;
+    color: #ef4444;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.modal-link-btn:hover {
+    text-decoration: underline;
+}
+
+/* ========================================
+   COMMON UI COMPONENTS - TOAST NOTIFICATIONS
+   ======================================== */
+.toast-notification {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1000;
+    animation: slideIn 0.3s ease-out;
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateX(400px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+.toast-content {
+    background-color: #4caf50;
+    color: white;
+    padding: 16px 24px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.toast-content.error {
+    background-color: #ef4444;
+}
+
+.toast-icon {
+    font-size: 20px;
+    font-weight: bold;
+    background-color: rgba(255, 255, 255, 0.2);
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.toast-message {
+    font-size: 14px;
+    font-weight: 500;
+}
+
+/* ========================================
+   LOGIN & REGISTRATION PAGES
+   ======================================== */
+.login-link {
+    font-size: 0.9rem;
+    color: #666;
+}
+
+.login-link a,
+.login-text-highlight {
+    color: #f42619;
+    text-decoration: none;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+/* ========================================
+   PROFILE COMPONENTS - Profile Section (Dashboard)
+   ======================================== */
+.profile-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 40px;
+    margin-bottom: 50px;
+}
+
+.profile-info {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+}
+
+.profile-photo {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    border: 2px solid #e0e0e0;
+    object-fit: cover;
+}
+
+.greeting-text {
+    font-size: 16px;
+    color: #6b6b6b;
+    margin-bottom: 5px;
+}
+
+.user-name {
+    font-size: 32px;
+    font-weight: 600;
+    color: #000000;
+}
+
+/* Balance Card */
+.balance-card {
+    background: linear-gradient(135deg, #ef4444 0%, #f87171 100%);
+    background-image: url('/Website Assets/Background Saldo.png');
+    background-size: cover;
+    background-position: center;
+    border-radius: 16px;
+    padding: 30px 40px;
+    color: white;
+    min-width: 480px;
+    box-shadow: 0 4px 12px rgba(239, 68, 68, 0.2);
+}
+
+.balance-label {
+    font-size: 14px;
+    opacity: 0.95;
+    margin-bottom: 10px;
+}
+
+.balance-amount {
+    font-size: 36px;
+    font-weight: 700;
+    margin-bottom: 15px;
+    letter-spacing: 2px;
+}
+
+.toggle-balance {
+    background: transparent;
+    border: none;
+    color: white;
+    font-size: 14px;
+    cursor: pointer;
+    padding: 8px 0;
+    text-decoration: underline;
+    transition: opacity 0.3s;
+}
+
+.toggle-balance:hover {
+    opacity: 0.8;
+}
+
+/* ========================================
+   PROFILE COMPONENTS - Profile Form (Account Page)
+   ======================================== */
+.profile-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px 0;
+}
+
+.profile-photo-wrapper {
+    position: relative;
+    margin-bottom: 30px;
+}
+
+.profile-photo-large {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    border: 3px solid #e0e0e0;
+    object-fit: cover;
+}
+
+.edit-photo-btn {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background-color: #ffffff;
+    border: 2px solid #e0e0e0;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    transition: all 0.3s;
+}
+
+.edit-photo-btn:hover {
+    background-color: #f9fafb;
+    border-color: #ef4444;
+}
+
+.profile-name {
+    font-size: 28px;
+    font-weight: 600;
+    color: #000000;
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+.profile-form {
+    width: 100%;
+    max-width: 550px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.form-label {
+    font-size: 13px;
+    color: #6b6b6b;
+    font-weight: 500;
+}
+
+.logout-container {
+    margin-top: 40px;
+    width: 100%;
+    max-width: 550px;
+}
+
+/* ========================================
+   DASHBOARD/HOME PAGE - Services Section
+   ======================================== */
+.services-section {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 30px;
+    margin-bottom: 50px;
+}
+
+.service-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+
+.service-item:hover {
+    transform: translateY(-5px);
+}
+
+.service-icon {
+    width: 60px;
+    height: 60px;
+    margin-bottom: 10px;
+}
+
+.service-icon img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.service-name {
+    font-size: 12px;
+    color: #333333;
+    font-weight: 500;
+    line-height: 1.3;
+    max-width: 80px;
+}
+
+/* ========================================
+   DASHBOARD/HOME PAGE - Banner Section
+   ======================================== */
+.banner-section {
+    margin-top: 60px;
+}
+
+.banner-title {
+    font-size: 18px;
+    font-weight: 600;
+    color: #000000;
+    margin-bottom: 20px;
+}
+
+.banner-slider {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.slider-btn {
+    background-color: rgba(255, 255, 255, 0.9);
+    border: 1px solid #e0e0e0;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 18px;
+    color: #333333;
+    transition: all 0.3s;
+    z-index: 10;
+}
+
+.slider-btn:hover {
+    background-color: #ffffff;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.banner-container {
+    flex: 1;
+    overflow: hidden;
+    border-radius: 12px;
+    max-width: 100%;
+}
+
+.banner-track {
+    display: flex;
+    gap: 20px;
+    transition: transform 0.5s ease-in-out;
+}
+
+.banner-slide {
+    min-width: 320px;
+    max-width: 320px;
+    flex-shrink: 0;
+}
+
+.banner-slide img {
+    width: 100%;
+    height: 160px;
+    display: block;
+    border-radius: 12px;
+    object-fit: cover;
+}
+
+.slider-dots {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 20px;
+}
+
+.dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: #d1d5db;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.dot.active {
+    background-color: #ef4444;
+    width: 24px;
+    border-radius: 5px;
+}
+
+/* ========================================
+   PAYMENT PAGE
+   ======================================== */
+.payment-section {
+    margin-top: 40px;
+    max-width: 600px;
+}
+
+.section-label {
+    font-size: 16px;
+    color: #6b6b6b;
+    margin-bottom: 15px;
+}
+
+.service-info {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 40px;
+}
+
+.payment-section .service-icon {
+    width: 28px;
+    height: 28px;
+    margin-bottom: 0;
+}
+
+.payment-section .service-name {
+    font-size: 16px;
+    font-weight: 500;
+    color: #000000;
+    max-width: none;
+}
+
+.payment-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.payment-section .input-icon {
+    width: 20px;
+    height: 20px;
+}
+
+/* ========================================
+   TOP UP PAGE
+   ======================================== */
+.topup-section {
+    margin-top: 40px;
+}
+
+.section-subtitle {
+    font-size: 16px;
+    color: #6b6b6b;
+    margin-bottom: 5px;
+}
+
+.topup-section .section-title {
+    font-size: 28px;
+    margin-bottom: 40px;
+}
+
+.topup-form-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    align-items: start;
+}
+
+.topup-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.topup-form .input-icon {
+    width: 20px;
+    height: 20px;
+}
+
+.quick-amounts {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+}
+
+.quick-amount-btn {
+    padding: 12px 16px;
+    background-color: #ffffff;
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+    font-size: 14px;
+    color: #333333;
+    cursor: pointer;
+    transition: all 0.3s;
+    font-weight: 500;
+}
+
+.quick-amount-btn:hover {
+    border-color: #ef4444;
+    color: #ef4444;
+    background-color: #fef2f2;
+}
+
+/* ========================================
+   TRANSACTION PAGE
+   ======================================== */
+.transaction-section {
+    margin-top: 40px;
+}
+
+.month-filter {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+}
+
+.month-btn {
+    padding: 8px 16px;
+    background-color: #ffffff;
+    border: 1px solid #d1d5db;
+    border-radius: 6px;
+    font-size: 14px;
+    color: #6b6b6b;
+    cursor: pointer;
+    transition: all 0.3s;
+    font-weight: 500;
+}
+
+.month-btn.active {
+    background-color: #000000;
+    color: #ffffff;
+    border-color: #000000;
+}
+
+.month-btn:hover {
+    border-color: #000000;
+    color: #000000;
+}
+
+.month-btn.active:hover {
+    background-color: #1f1f1f;
+    color: #ffffff;
+}
+
+.transaction-list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.transaction-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+    transition: box-shadow 0.3s;
+}
+
+.transaction-item:hover {
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.transaction-info {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.transaction-amount {
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.transaction-amount.credit {
+    color: #10b981;
+}
+
+.transaction-amount.debit {
+    color: #ef4444;
+}
+
+.transaction-date {
+    font-size: 12px;
+    color: #9ca3af;
+}
+
+.transaction-description {
+    font-size: 14px;
+    color: #333333;
+    font-weight: 500;
+}
+
+.empty-state {
+    text-align: center;
+    padding: 80px 20px;
+    color: #9ca3af;
+    font-size: 14px;
+}
+
+.show-more-container {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.show-more-btn {
+    padding: 12px 40px;
+    background-color: #ffffff;
+    border: none;
+    border-radius: 6px;
+    font-size: 14px;
+    color: #ef4444;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.3s;
+}
+
+.show-more-btn:hover {
+    color: #dc2626;
+    text-decoration: underline;
+}
+
+/* ========================================
+   RESPONSIVE DESIGN
+   ======================================== */
+@media (max-width: 1200px) {
+    .services-section {
+        grid-template-columns: repeat(6, 1fr);
+    }
+}
+
+@media (max-width: 1024px) {
+    .topup-form-container {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    .header {
+        padding: 15px 30px;
+    }
+
+    .main-content {
+        padding: 30px 30px;
+    }
+
+    .header-nav {
+        gap: 20px;
+    }
+
+    .profile-section {
+        flex-direction: column;
+    }
+
+    .balance-card {
+        min-width: 100%;
+    }
+
+    .user-name {
+        font-size: 24px;
+    }
+
+    .services-section {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 20px;
+    }
+
+    .quick-amounts {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .month-filter {
+        gap: 10px;
+    }
+
+    .month-btn {
+        padding: 6px 12px;
+        font-size: 12px;
+    }
+
+    .profile-name {
+        font-size: 24px;
+    }
+}
+
+@media (max-width: 480px) {
+    .header {
+        padding: 15px 20px;
+    }
+
+    .main-content {
+        padding: 20px;
+    }
+
+    .services-section {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .slider-btn {
+        width: 32px;
+        height: 32px;
+        font-size: 14px;
+    }
+
+    .quick-amounts {
+        grid-template-columns: 1fr;
+    }
+
+    .transaction-item {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+
+    .transaction-description {
+        margin-top: 5px;
+    }
+
+    .profile-photo-large {
+        width: 100px;
+        height: 100px;
+    }
+
+    .edit-photo-btn {
+        width: 32px;
+        height: 32px;
+        font-size: 14px;
+    }
+
+    .payment-section {
+        max-width: 100%;
+    }
+}
